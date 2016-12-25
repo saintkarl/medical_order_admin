@@ -1,0 +1,27 @@
+<datasource jndi-name="java:jboss/datasources/ErsPlatformDS" pool-name="ersPlatformDSPool" enabled="true" use-java-context="true">
+    <connection-url>jdbc:postgresql://localhost:5432/ErsPlatform</connection-url>
+    <driver-class>org.postgresql.Driver</driver-class>
+    <driver>postgresql-jdbc4</driver>
+    <pool>
+        <min-pool-size>2</min-pool-size>
+        <max-pool-size>50</max-pool-size>
+    </pool>
+    <security>
+        <user-name>ers</user-name>
+        <password>123456</password>
+    </security>
+    <validation>
+        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+        <validate-on-match>false</validate-on-match>
+        <background-validation>false</background-validation>
+        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+    </validation>
+    <timeout>
+        <blocking-timeout-millis>30000</blocking-timeout-millis>
+        <allocation-retry>3</allocation-retry>
+    </timeout>
+    <statement>
+        <prepared-statement-cache-size>150</prepared-statement-cache-size>
+        <share-prepared-statements>false</share-prepared-statements>
+    </statement>
+</datasource>

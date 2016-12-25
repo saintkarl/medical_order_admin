@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <tlib-version>2.0</tlib-version>
+    <short-name>tat-taglibs</short-name>
+    <uri>http://www.retirement.com/tat-taglibs</uri>
+
+    <function>
+        <name>roundUp</name>
+        <function-class>com.karlchu.mo.common.util.CommonUtil</function-class>
+        <function-signature>java.lang.String roundUp(java.lang.Double,int)</function-signature>
+    </function>
+
+    <function>
+        <name>urlEncode</name>
+        <function-class>com.karlchu.mo.web.taglibs.PortalTaglibs</function-class>
+        <function-signature>java.lang.String urlEncode(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>encodeURIComponent</name>
+        <function-class>com.karlchu.mo.web.taglibs.PortalTaglibs</function-class>
+        <function-signature>java.lang.String encodeURIComponent(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>decodeURIComponent</name>
+        <function-class>com.karlchu.mo.web.taglibs.PortalTaglibs</function-class>
+        <function-signature>java.lang.String decodeURIComponent(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>unEscapeHTML</name>
+        <function-class>com.karlchu.mo.common.util.StringUtil</function-class>
+        <function-signature>java.lang.String unEscapeHTML(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>escapeHTML</name>
+        <function-class>com.karlchu.mo.web.util.StringUtil</function-class>
+        <function-signature>java.lang.String escapeHTML(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>escapeJS</name>
+        <function-class>com.karlchu.mo.common.util.StringUtil</function-class>
+        <function-signature>java.lang.String escapeJS(java.lang.String)</function-signature>
+    </function>
+
+
+    <function>
+        <name>cleanHtmlTags</name>
+        <function-class>com.karlchu.mo.web.taglibs.PortalTaglibs</function-class>
+        <function-signature>java.lang.String cleanHtmlTags(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>replaceLineBreakChar</name>
+        <function-class>com.karlchu.mo.web.util.StringUtil</function-class>
+        <function-signature>java.lang.String replaceLineBreakChar(java.lang.String)</function-signature>
+    </function>
+
+    <function>
+        <name>getAppURL</name>
+        <function-class>com.karlchu.mo.web.util.RequestUtil</function-class>
+        <function-signature>java.lang.String getAppURL(javax.servlet.http.HttpServletRequest)</function-signature>
+    </function>
+
+    <function>
+        <name>isMobile</name>
+        <function-class>com.karlchu.mo.web.util.MobileUtil</function-class>
+        <function-signature>boolean isMobile(javax.servlet.ServletRequest)</function-signature>
+    </function>
+
+    <function>
+        <name>isTablet</name>
+        <function-class>com.karlchu.mo.web.util.MobileUtil</function-class>
+        <function-signature>boolean isTablet(javax.servlet.ServletRequest)</function-signature>
+    </function>
+    <function>
+        <name>isSurfaceTablet</name>
+        <function-class>com.karlchu.mo.web.util.MobileUtil</function-class>
+        <function-signature>boolean isSurfaceTablet(javax.servlet.ServletRequest)</function-signature>
+    </function>
+
+    <function>
+        <name>isAndroidTablet</name>
+        <function-class>com.karlchu.mo.web.util.MobileUtil</function-class>
+        <function-signature>boolean isAndroidTablet(javax.servlet.ServletRequest)</function-signature>
+    </function>
+
+    <function>
+        <name>isMobileOrTablet</name>
+        <function-class>com.karlchu.mo.web.util.MobileUtil</function-class>
+        <function-signature>boolean isMobileOrTablet(javax.servlet.ServletRequest)</function-signature>
+    </function>
+
+
+</taglib>

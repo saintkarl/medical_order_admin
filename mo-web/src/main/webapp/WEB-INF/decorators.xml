@@ -1,0 +1,31 @@
+<!-- Default decorators, you can let this file empty by don't remove it -->
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/40*.jsp</pattern>
+        <pattern>/*ajax=true*</pattern>
+        <pattern>/ajax/*</pattern>
+        <pattern>/logout*</pattern>
+        <pattern>/scripts/**</pattern>
+        <pattern>/ckeditor442/**</pattern>
+        <pattern>/*/login.*</pattern>
+        <pattern>/mobile/**</pattern>
+        <pattern>/api/**</pattern>
+    </excludes>
+
+
+    <decorator name="private" page="default_ace.jsp">
+        <pattern>/admin/**</pattern>
+    </decorator>
+
+    <decorator name="public" page="default_pub.jsp">
+        <pattern>/public/**</pattern>
+    </decorator>
+
+
+
+    <decorator name="login" page="login_ace.jsp">
+        <pattern>/login*</pattern>
+        <pattern>/forgotpwd*</pattern>
+    </decorator>
+
+</decorators>

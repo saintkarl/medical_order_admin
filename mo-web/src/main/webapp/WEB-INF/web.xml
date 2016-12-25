@@ -1,0 +1,284 @@
+
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<display-name>tat-ers</display-name>
+	<distributable />
+
+	<!-- precompiled jsp mappings -->
+
+	<!-- Define the default CSS Theme -->
+	<context-param>
+		<param-name>csstheme</param-name>
+		<param-value>tat</param-value>
+	</context-param>
+	<!-- Define the basename for common.a resource bundle for I18N -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>ApplicationResources</param-value>
+	</context-param>
+	<!--
+		Fallback locale if no bundles found for browser's preferred locale
+	-->
+	<!--
+		Force common.a single locale using param-name
+		'javax.servlet.jsp.jstl.fmt.locale'
+	-->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+		<param-value>en</param-value>
+	</context-param>
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.locale</param-name>
+        <param-value>vi</param-value>
+    </context-param>
+	<!-- Context Configuration locations for Spring XML files -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+            classpath:/applicationContext.xml
+            classpath:/applicationContext-jcr.xml
+            classpath:/applicationContext-service.xml
+            classpath:/security.xml
+        </param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<!--<filter>-->
+		<!--<filter-name>localeFilter</filter-name>-->
+		<!--<filter-class>com.retirement.tat.webapp.filter.LocaleFilter</filter-class>-->
+	<!--</filter>-->
+	<filter>
+		<filter-name>rewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<init-param>
+			<param-name>logLevel</param-name>
+			<param-value>log4j</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>securityFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+		<init-param>
+			<param-name>targetBeanName</param-name>
+			<param-value>springSecurityFilterChain</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
+	</filter>
+
+    <filter>
+        <filter-name>cssCache</filter-name>
+        <filter-class>com.karlchu.mo.web.filter.cache.CacheFilter</filter-class>
+        <init-param>
+            <param-name>expirationTime</param-name>
+            <param-value>604800</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>jsCache</filter-name>
+        <filter-class>com.karlchu.mo.web.filter.cache.CacheFilter</filter-class>
+        <init-param>
+            <param-name>private</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>expirationTime</param-name>
+            <param-value>604800</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>imagesCache</filter-name>
+        <filter-class>com.karlchu.mo.web.filter.cache.CacheFilter</filter-class>
+        <init-param>
+            <param-name>static</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>expirationTime</param-name>
+            <param-value>2592000</param-value>
+        </init-param>
+    </filter>
+
+	<servlet>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<servlet-class>com.karlchu.mo.web.servlet.DownloadFileServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DownloadFileServlet</servlet-name>
+		<url-pattern>/repository/*</url-pattern>
+		<url-pattern>/content/*</url-pattern>
+	</servlet-mapping>
+
+
+    <!--<filter>-->
+		<!--<filter-name>SSLSessionSharingFilter</filter-name>-->
+		<!--<filter-class>com.retirement.tat.webapp.filter.SSLSessionSharingFilter</filter-class>-->
+	<!--</filter>-->
+	<!--<filter>-->
+	    <!--<filter-name>cacheFilter</filter-name>-->
+	    <!--<filter-class>com.opensymphony.oscache.web.filter.CacheFilter</filter-class>-->
+	    <!--<init-param>-->
+	        <!--<param-name>time</param-name>-->
+	        <!--<param-value>600</param-value>-->
+	    <!--</init-param>-->
+	<!--</filter>-->
+
+	<!--<filter-mapping>-->
+		<!--<filter-name>SSLSessionSharingFilter</filter-name>-->
+		<!--<url-pattern>/*</url-pattern>-->
+	<!--</filter-mapping>-->
+	<!---->
+    <filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>securityFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+
+	<!--
+		Commented out for 2 reasons: 1) it's common.a pain when developing JSPs, and
+		2) it causes the Signup webtest to fail
+	-->
+	<!--<filter-mapping> -->
+		<!--<filter-name>cacheFilter</filter-name>-->
+		<!--<url-pattern>*.jsp</url-pattern> -->
+	<!--</filter-mapping>-->
+	
+	<!--<filter-mapping>-->
+		<!--<filter-name>localeFilter</filter-name>-->
+		<!--<url-pattern>/*</url-pattern>-->
+	<!--</filter-mapping>-->
+	<!--<filter-mapping>-->
+		<!--<filter-name>exportFilter</filter-name>-->
+		<!--<url-pattern>*.html</url-pattern>-->
+	<!--</filter-mapping>-->
+	<filter-mapping>
+		<filter-name>rewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+    <filter-mapping>
+        <filter-name>cssCache</filter-name>
+        <url-pattern>*.css</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>jsCache</filter-name>
+        <url-pattern>*.js</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>imagesCache</filter-name>
+        <url-pattern>/images/*</url-pattern>
+        <url-pattern>/themes/images/*</url-pattern>
+        <url-pattern>/themes/**</url-pattern>
+    </filter-mapping>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.karlchu.mo.web.listener.StartupListener</listener-class>
+	</listener>
+
+	 
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>captcha</servlet-name>
+		<servlet-class>com.karlchu.mo.web.servlet.captcha.CaptchaServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+    <!--connector servlet-->
+    <!--<servlet>
+        <servlet-name>ConnectorServlet</servlet-name>
+        <servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>-->
+
+	<!-- Dispatching handled by StaticFilter -->
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>/logon</url-pattern>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>captcha</servlet-name>
+        <url-pattern>/jcaptcha</url-pattern>
+    </servlet-mapping>
+
+    <!--<servlet-mapping>
+        <servlet-name>ConnectorServlet</servlet-name>
+        <url-pattern>/ckeditor442/filemanager/connectors/*</url-pattern>
+    </servlet-mapping>-->
+
+    <distributable/>
+
+	<session-config>
+		<session-timeout>120</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<error-code>400</error-code>
+		<location>/index.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/403.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
+</web-app>

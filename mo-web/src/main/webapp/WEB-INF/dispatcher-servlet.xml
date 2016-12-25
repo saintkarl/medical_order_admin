@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:tx="http://www.springframework.org/schema/tx"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd"
+       default-lazy-init="true">
+    <bean id="exceptionResolver" class="com.karlchu.mo.web.handler.MySimpleMappingExceptionResolver">
+    	<property name="order" value="2"></property>
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.dao.DataAccessException">
+                    dataAccessFailure
+                </prop>
+                <prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">
+                    uploadFailure
+                </prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="-1"/>
+        <property name="maxInMemorySize" value="10485760"/>
+    </bean>
+	
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="ApplicationResources"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+    </bean>
+
+    <context:component-scan base-package="com.karlchu.mo.web"/>
+    <mvc:resources mapping="/scripts/**" location="/scripts/"/>
+    <mvc:resources mapping="/file/**" location="/files/"/>
+    <mvc:view-controller path="/logon" view-name="/logon"/>
+    <mvc:view-controller path="/login" view-name="/logon"/>
+    <mvc:resources mapping="/ckeditor442/**" location="/ckeditor442/"/>
+    <!-- Configures the @Controller programming model -->
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager" />
+
+<!--
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*/product/**"/>
+            <mvc:mapping path="/ajax/quickView.html*"/>
+            <mvc:mapping path="/api/quickView.html*"/>
+            <bean class="com.retirement.tat.ecommerce.web.interceptor.ProductTrackingInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+-->
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="false" />
+        <property name="favorParameter" value="true" />
+        <property name="mediaTypes" >
+            <value>
+                json=application/json
+                xml=application/xml
+            </value>
+        </property>
+    </bean>
+
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="order" value="2"/>
+        <property name="requestContextAttribute" value="rc"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

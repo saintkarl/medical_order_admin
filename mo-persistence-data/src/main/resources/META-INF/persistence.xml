@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="tat-persistence-data">
+        <jta-data-source>java:jboss/datasources/TatPlatformDS</jta-data-source>
+        <class>com.karlchu.mo.core.data.entity.UserGroupEntity</class>
+        <class>com.karlchu.mo.core.data.entity.UsersEntity</class>
+        <class>com.karlchu.mo.core.data.entity.UserDemographicEntity</class>
+        <class>com.karlchu.mo.core.data.entity.PermissionEntity</class>
+        <class>com.karlchu.mo.core.data.entity.RoleEntity</class>
+        <class>com.karlchu.mo.core.data.entity.RoleAclEntity</class>
+        <class>com.karlchu.mo.core.data.entity.UserGroupAclEntity</class>
+        <class>com.karlchu.mo.core.data.entity.UserRoleEntity</class>
+        <class>com.karlchu.mo.core.data.entity.AuthorEntity</class>
+        <class>com.karlchu.mo.core.data.entity.BookEntity</class>
+        <class>com.karlchu.mo.core.data.entity.BookCategoryEntity</class>
+        <class>com.karlchu.mo.core.data.entity.NewsEntity</class>
+        <class>com.karlchu.mo.core.data.entity.NewsCategoryEntity</class>
+        <class>com.karlchu.mo.core.data.entity.TipEntity</class>
+        <class>com.karlchu.mo.core.data.entity.TipCategoryEntity</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.default_schema" value="TatPlatform" />
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.default_batch_fetch_size" value="20"/>
+            <property name="hibernate.jdbc.fetch_size" value="20"/>
+            <property name="hibernate.jdbc.batch_size" value="20"/>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+            <property name="jboss.entity.manager.jndi.name" value="java:jboss/tatPersistenceEntityManager"/>
+            <property name="jboss.entity.manager.factory.jndi.name" value="java:jboss/tatPersistenceEntityManagerFactory"/>
+
+
+        </properties>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <validation-mode>CALLBACK</validation-mode>
+    </persistence-unit>
+</persistence>

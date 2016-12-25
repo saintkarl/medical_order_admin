@@ -1,0 +1,22 @@
+.table-filter .form-actions {
+    display: block;
+    background-color: #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 4px;
+}
+
+.table-btn-controls {
+    margin-top: 8px;
+}
+
+.select-cell {
+    width: 40px;
+    text-align: center;
+}
+
+.col-actions {
+    width: 10%;
+    text-align: center;
+}
