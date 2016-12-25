@@ -50,7 +50,7 @@
             <mvc:mapping path="/*/product/**"/>
             <mvc:mapping path="/ajax/quickView.html*"/>
             <mvc:mapping path="/api/quickView.html*"/>
-            <bean class="com.retirement.tat.ecommerce.web.interceptor.ProductTrackingInterceptor"/>
+            <bean class="com.karlchu.mo.web.interceptor.ProductTrackingInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 -->
