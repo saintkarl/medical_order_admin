@@ -989,7 +989,7 @@
                    return false;
                }
                var atomPat=new RegExp(atom,"g");
-               varretirement=com.banvien.platform.mongodb.helper.domain.match(atomPat);
+               varretirement=com.karlchu.platform.mongodb.helper.domain.match(atomPat);
                var len=domArr.length;
                if ((domArr[domArr.length-1].length < 2) ||
                    (domArr[domArr.length-1].length > 3)) {
@@ -1000,7 +1000,7 @@
                }
                return true;
             }]]>
-             ]]>]]>]]>]]>]]></javascript>
+            ]]>]]>]]>]]>]]></javascript>
 
       </validator>
 

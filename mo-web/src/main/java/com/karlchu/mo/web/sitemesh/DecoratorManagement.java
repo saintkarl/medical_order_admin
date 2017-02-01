@@ -28,7 +28,7 @@ public class DecoratorManagement {
             isLoaded = true;
             DecoratorManagement.configLoader = configLoader;
             try {
-                String tableName = Config.getInstance().getProperty("portal.table.name", "TatPlatform.Theme");
+                String tableName = Config.getInstance().getProperty("portal.table.name", "MoPlatform.Theme");
                 String codeColName = Config.getInstance().getProperty("portal.table.code.col.name", "Code");
                 String decoratorColName = Config.getInstance().getProperty("portal.table.decorator.col.name", "DecoratorXml");
                 List<PortalDecorDTO> dtoList = JdbcUtils.query(tableName, new String[]{codeColName + " AS code",

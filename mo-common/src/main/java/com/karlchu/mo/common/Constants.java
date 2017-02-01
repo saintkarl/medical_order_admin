@@ -121,7 +121,7 @@ public class Constants {
     public static final String ORG_ID = "ORG_ID";
     public static final String ORG_SESSION = "ORG_SESSION";
     public static final String LOGON_DEFAULT_PERMISSION = "LOGON";
-    public static final String PLATFORM_CACHE_JNDI_URI = "java:jboss/infinispan/container/tatPlatform";
+    public static final String PLATFORM_CACHE_JNDI_URI = "java:jboss/infinispan/container/moPlatform";
 
 
     public static final String INSERT_OR_UPDATE = "insert-update";

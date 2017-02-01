@@ -2,7 +2,7 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
     <persistence-unit name="persistence-data">
-        <jta-data-source>java:jboss/datasources/TatPlatformDS</jta-data-source>
+        <jta-data-source>java:jboss/datasources/MoPlatformDS</jta-data-source>
         <class>com.karlchu.mo.core.data.entity.UserGroupEntity</class>
         <class>com.karlchu.mo.core.data.entity.UsersEntity</class>
         <class>com.karlchu.mo.core.data.entity.UserDemographicEntity</class>
@@ -20,7 +20,7 @@
         <class>com.karlchu.mo.core.data.entity.TipCategoryEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
-            <property name="hibernate.default_schema" value="TatPlatform" />
+            <property name="hibernate.default_schema" value="MoPlatform" />
             <property name="hibernate.hbm2ddl.auto" value="validate"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.default_batch_fetch_size" value="20"/>

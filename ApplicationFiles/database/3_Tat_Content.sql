@@ -1,5 +1,5 @@
-create schema TatPlatform;
-set search_path to TatPlatform;
+create schema MoPlatform;
+set search_path to MoPlatform;
 
 CREATE TABLE Author (
   AuthorID BIGSERIAL PRIMARY KEY,

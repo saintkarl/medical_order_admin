@@ -20,6 +20,9 @@
         <module>mo-ear</module>
         <module>mo-persistence-data</module>
         <module>content-jcr</module>
+        <module>rest-jwt-security</module>
+        <module>cache-utils</module>
+        <module>common-utils</module>
     </modules>
 
     <name>Medical Order - Platform</name>
@@ -59,6 +62,10 @@
         <solrcore.version>4.3.0</solrcore.version>
         <solrj.version>4.3.0</solrj.version>
         <saxon9.version>9.1.0.8</saxon9.version>
+        <source.plugin.version>3.0.1</source.plugin.version>
+        <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
+        <deploy.plugin.version>2.8.2</deploy.plugin.version>
+
 
     </properties>
     <repositories>

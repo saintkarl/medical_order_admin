@@ -15,6 +15,7 @@
     <http auto-config="false" access-decision-manager-ref="accessDecisionManager">
         <intercept-url pattern="/ajax/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <intercept-url pattern="/mobile/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <intercept-url pattern="/admin/**" access="LOGON" />
         <intercept-url pattern="/home**" access="LOGON" />
         <custom-filter position="PRE_AUTH_FILTER" ref="myAuthenticationFilter"/>

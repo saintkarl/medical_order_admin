@@ -2,6 +2,7 @@ package com.karlchu.mo.core.dto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +18,8 @@ public class RoleDTO implements Serializable {
     private String name;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
+    private List<PermissionDTO> permissions;
+
 
     public RoleDTO() {
     }
@@ -27,6 +30,14 @@ public class RoleDTO implements Serializable {
         this.name = name;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
+    }
+
+    public List<PermissionDTO> getPermissions() {
+        return this.permissions;
+    }
+
+    public void setPermissions(List<PermissionDTO> permissions) {
+        this.permissions = permissions;
     }
 
     public Long getRoleId() {

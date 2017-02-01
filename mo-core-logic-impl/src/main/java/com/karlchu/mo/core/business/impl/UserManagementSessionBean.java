@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * E-Retailer System Platform - Copyright (c) by Ban Vien Co., Ltd. All rights reserved.
  * User: viennh
  * Date: 11/30/15
  * Time: 3:46 PM

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           targetNamespace="http://www.banvien.com/schema/rest/security">
+
+    <xsd:element name="rest" type="XRest"/>
+
+    <xsd:complexType name="XRest">
+
+        <xsd:attribute name="token-expiration" type="xsd:boolean">
+            <xsd:annotation>
+                <xsd:documentation>Defines the token will be expired or not.
+                    It the token is not expired, the principal will be reload based-on information in the token and use the 'user-details-server' to do it.</xsd:documentation>
+            </xsd:annotation>
+        </xsd:attribute>
+
+        <xsd:sequence>
+            <xsd:element name="intercept-urls" type="XInterceptUrls" maxOccurs="1" minOccurs="1"/>
+            <xsd:element name="user-details-service" type="xsd:string" maxOccurs="1" minOccurs="0">
+                <xsd:annotation>
+                    <xsd:documentation>Full classname used to load principal information, currently required if the 'token-expiration' is 'false'</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+
+    </xsd:complexType>
+
+    <xsd:complexType name="XInterceptUrls">
+        <xsd:sequence>
+            <xsd:element name="intercept-url" type="XInterceptUrl" maxOccurs="unbounded" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="XInterceptUrl">
+        <xsd:attribute name="pattern" type="xsd:string" />
+        <xsd:attribute name="access" type="xsd:string"/>
+    </xsd:complexType>
+
+</xsd:schema>
+

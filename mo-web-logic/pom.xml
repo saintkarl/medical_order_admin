@@ -27,6 +27,12 @@
 
         <dependency>
             <groupId>com.karlchu</groupId>
+            <artifactId>rest-jwt-security</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.karlchu</groupId>
             <artifactId>mo-core-logic</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>

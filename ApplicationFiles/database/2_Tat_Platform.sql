@@ -1,5 +1,5 @@
-create schema TatPlatform;
-set search_path to TatPlatform;
+create schema MoPlatform;
+set search_path to MoPlatform;
 
 CREATE TABLE Permission (
   PermissionID BIGSERIAL PRIMARY KEY,
@@ -101,5 +101,6 @@ ALTER TABLE UserDemographic ADD FOREIGN KEY (CityOfBirthID) REFERENCES City (Cit
 
 INSERT INTO UserGroup(UserGroupID, Code, Name, CreatedDate, ModifiedDate) values (1,'ADMIN','ADMIN',NOW(),NOW());
 
-INSERT INTO users(UserID, Username, Password, FirstName, LastName, Email, Code, PhoneNumber, Status, CreatedDate, ModifiedDate, UserGroupID) VALUES (1, 'admin','NHeKr5howj0=', 'Admin','Admin','admin@admin.com','Admin','0969906805','1',NOW(),NOW(), 1);
+-- INSERT INTO users(UserID, Username, Password, FirstName, LastName, Email, Code, PhoneNumber, Status, CreatedDate, ModifiedDate, UserGroupID) VALUES (1, 'admin','NHeKr5howj0=', 'Admin','Admin','admin@admin.com','Admin','0969906805','1',NOW(),NOW(), 1);
+INSERT INTO users(UserID, Username, Password, FirstName, LastName, Email, Code, PhoneNumber, Status, CreatedDate, ModifiedDate, UserGroupID) VALUES (1, 'admin','99SLI553amM=', 'Admin','Admin','admin@admin.com','Admin','0969906805','1',NOW(),NOW(), 1);
 

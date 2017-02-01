@@ -14,7 +14,7 @@
 
   <tag>
     <name>href</name>
-    <tagclass>com.banvien.platform.jcr.taglib.RepositoryFileTag</tagclass>
+    <tagclass>com.karlchu.platform.jcr.taglib.RepositoryFileTag</tagclass>
     <bodycontent>JSP</bodycontent>
     <attribute>
       <name>value</name>

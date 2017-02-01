@@ -25,7 +25,7 @@ import java.security.spec.KeySpec;
 public final class DesEncryptionUtils {
 	private transient final Log log = LogFactory.getLog(DesEncryptionUtils.class);
 	private static DesEncryptionUtils instance = new DesEncryptionUtils();
-	private static final String SECURITY_PHASE = "VConnect";
+	private static final String SECURITY_PHASE = "K-eco";
     private SecretKey key;
     private AlgorithmParameterSpec paramSpec;
 	public static DesEncryptionUtils getInstance() {
