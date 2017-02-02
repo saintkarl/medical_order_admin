@@ -18,6 +18,12 @@
     <dependencies>
         <dependency>
             <groupId>com.karlchu</groupId>
+            <artifactId>mo-common</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.karlchu</groupId>
             <artifactId>cache-utils</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
@@ -60,6 +66,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>

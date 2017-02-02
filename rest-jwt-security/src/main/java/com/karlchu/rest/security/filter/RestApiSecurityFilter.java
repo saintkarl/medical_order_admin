@@ -1,7 +1,7 @@
 package com.karlchu.rest.security.filter;
 
 
-import com.karlchu.cache.utils.CacheUtil;
+import com.karlchu.mo.common.util.CacheUtil;
 import com.karlchu.rest.security.exception.UsernameNotFoundException;
 import com.karlchu.rest.security.user.UserDetails;
 import com.karlchu.rest.security.user.UserDetailsService;

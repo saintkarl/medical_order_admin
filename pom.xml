@@ -9,20 +9,20 @@
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>mo-web</module>
-        <module>mo-web-logic</module>
+        <module>common-utils</module>
+        <module>content-jcr</module>
+        <module>cache-utils</module>
         <module>mo-common</module>
-        <module>mo-core-logic</module>
+        <module>rest-jwt-security</module>
+        <module>mo-core-data</module>
+        <module>mo-persistence-data</module>
         <module>mo-core-logic-dto</module>
         <module>mo-core-logic-util</module>
-        <module>mo-core-data</module>
+        <module>mo-core-logic</module>
         <module>mo-core-logic-impl</module>
+        <module>mo-web-logic</module>
+        <module>mo-web</module>
         <module>mo-ear</module>
-        <module>mo-persistence-data</module>
-        <module>content-jcr</module>
-        <module>rest-jwt-security</module>
-        <module>cache-utils</module>
-        <module>common-utils</module>
     </modules>
 
     <name>Medical Order - Platform</name>

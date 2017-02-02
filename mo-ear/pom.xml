@@ -18,6 +18,31 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+
+
+        <dependency>
+            <groupId>com.karlchu</groupId>
+            <artifactId>cache-utils</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.karlchu</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.karlchu</groupId>
+            <artifactId>content-jcr</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
+
+
+
         <dependency>
             <groupId>com.karlchu</groupId>
             <artifactId>mo-common</artifactId>
@@ -25,6 +50,12 @@
             <type>jar</type>
         </dependency>
 
+        <dependency>
+            <groupId>com.karlchu</groupId>
+            <artifactId>rest-jwt-security</artifactId>
+            <version>${project.version}</version>
+            <type>jar</type>
+        </dependency>
 
         <dependency>
             <groupId>com.karlchu</groupId>
@@ -96,6 +127,7 @@
                             <contextRoot>/</contextRoot>
                         </webModule>
                     </modules>
+                    <unpackTypes>war</unpackTypes>
                 </configuration>
             </plugin>
             <!-- The JBoss AS plugin deploys your ear to common.a local JBoss AS container -->

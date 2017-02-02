@@ -1,6 +1,6 @@
 package com.karlchu.rest.security.utils;
 
-import com.karlchu.cache.utils.CacheUtil;
+import com.karlchu.mo.common.util.CacheUtil;
 import com.karlchu.rest.security.user.UserDetails;
 
 import java.util.HashMap;

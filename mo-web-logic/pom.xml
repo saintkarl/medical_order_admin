@@ -20,11 +20,16 @@
     <dependencies>
         <dependency>
             <groupId>com.karlchu</groupId>
+            <artifactId>cache-utils</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.karlchu</groupId>
             <artifactId>mo-common</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
             <groupId>com.karlchu</groupId>
             <artifactId>rest-jwt-security</artifactId>
