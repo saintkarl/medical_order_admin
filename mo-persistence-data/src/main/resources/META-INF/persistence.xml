@@ -18,6 +18,10 @@
         <class>com.karlchu.mo.core.data.entity.NewsCategoryEntity</class>
         <class>com.karlchu.mo.core.data.entity.TipEntity</class>
         <class>com.karlchu.mo.core.data.entity.TipCategoryEntity</class>
+        <class>com.karlchu.mo.core.data.entity.InvoiceEntity</class>
+        <class>com.karlchu.mo.core.data.entity.InvoiceDetailEntity</class>
+        <class>com.karlchu.mo.core.data.entity.ProductEntity</class>
+        <class>com.karlchu.mo.core.data.entity.StoreEntity</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.default_schema" value="MoPlatform" />
