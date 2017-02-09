@@ -172,4 +172,7 @@ public class Constants {
 
     public static final String TIP_IMG_PATH = "tip";
 
+    //invoice status
+    public static final int INVOICE_NEW = 1;
+
 }
