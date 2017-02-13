@@ -101,6 +101,24 @@
             </li>
         </ul>
     </li>
+    <li>
+        <a href="#" class="dropdown-toggle">
+            <i class="menu-icon fa fa-list"></i>
+            <span class="menu-text">
+                    <fmt:message key="label.update.information"/>
+                </span>
+            <b class="arrow fa fa-angle-down"></b>
+        </a>
+        <b class="arrow"></b>
+        <ul class="submenu">
+            <li>
+                <a href="<c:url value="/admin/store/list.html"/>">
+                    <i class="menu-icon fa fa-caret-right"></i><fmt:message key="store.information"/>
+                </a>
+                <b class="arrow"></b>
+            </li>
+        </ul>
+    </li>
 </ul>
 <!-- /.nav-list -->
 

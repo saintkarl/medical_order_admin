@@ -53,6 +53,48 @@ $(document).ready(function(){
     }
 });
 
+var buttonDeleteColor = "#DD6B55";
+
+function deleteById(id, formId) {
+    var form = 'itemForm';
+    if (typeof formId != 'undefined') {
+        form = formId;
+    }
+    $('#crudaction').val('delete');
+    $('input[name="checkList"]').prop('checked', false);
+    $('#hiddenItem').attr('name', 'checkList');
+    $('#hiddenItem').val(id);
+    $("#" + form).submit();
+}
+
+function deleteBySelectedIds(confirmData,callback){
+    swal({
+        title: confirmData.title,
+        text: confirmData.text,
+        type: "warning",
+        showCancelButton: true,
+        cancelButtonText: confirmData.cancelButtonText,
+        confirmButtonColor: buttonDeleteColor,
+        confirmButtonText: confirmData.confirmButtonText,
+        closeOnConfirm: true
+    }, callback);
+}
+
+function showWarningDelete(confirmData, id, form) {
+    swal({
+        title: confirmData.title,
+        text: confirmData.text,
+        type: "warning",
+        showCancelButton: true,
+        cancelButtonText: confirmData.cancelButtonText,
+        confirmButtonColor: buttonDeleteColor,
+        confirmButtonText: confirmData.confirmButtonText,
+        closeOnConfirm: true
+    }, function(){
+        deleteById(id, form);
+    });
+}
+
 function submitForm(formId){
     $('body').modalmanager('loading');
     $('#'+formId).submit();

@@ -21,6 +21,7 @@
     <jee:local-slsb jndi-name="java:app/mo-core-logic-impl-1.0/RoleAclManagementSessionEJB!com.karlchu.mo.core.business.RoleAclManagementLocalBean" business-interface="com.karlchu.mo.core.business.RoleAclManagementLocalBean" id="roleAclManagementLocalBean"/>
     <jee:local-slsb jndi-name="java:app/mo-core-logic-impl-1.0/UserGroupAclManagementSessionEJB!com.karlchu.mo.core.business.UserGroupAclManagementLocalBean" business-interface="com.karlchu.mo.core.business.UserGroupAclManagementLocalBean" id="userGroupAclManagementLocalBean"/>
     <jee:local-slsb jndi-name="java:app/mo-core-logic-impl-1.0/TipManagementSessionEJB!com.karlchu.mo.core.business.TipManagementLocalBean" business-interface="com.karlchu.mo.core.business.TipManagementLocalBean" id="tipManagementLocalBean"/>
+    <jee:local-slsb jndi-name="java:app/mo-core-logic-impl-1.0/StoreManagementSessionEJB!com.karlchu.mo.core.business.StoreManagementLocalBean" business-interface="com.karlchu.mo.core.business.StoreManagementLocalBean" id="sipManagementLocalBean"/>
     <jee:local-slsb jndi-name="java:app/mo-core-logic-impl-1.0/TipCategoryManagementSessionEJB!com.karlchu.mo.core.business.TipCategoryManagementLocalBean" business-interface="com.karlchu.mo.core.business.TipCategoryManagementLocalBean" id="tipCategoryManagementLocalBean"/>
 
 

@@ -36,8 +36,8 @@
 
     <div class="page-header">
         <div class="row">
-            <h1 class="col-sm-9"><fmt:message key="edit.tip.title"/> </h1>
-            <div class="col-sm-2">
+            <h1 class="col-sm-8"><fmt:message key="edit.tip.title"/> </h1>
+            <div class="col-sm-3">
                 <a href="${backUrl}" class="btn btn-grey">
                     <i class="ace-icon fa fa-arrow-left"></i>
                     <fmt:message key="label.back"/>
@@ -68,7 +68,7 @@
 
                     <div class="col-sm-9">
                         <form:textarea path="pojo.description" cssClass="col-xs-10 col-sm-5"/>
-                        <form:errors path="pojo.title" cssClass="red-text"/>
+                        <form:errors path="pojo.description" cssClass="red-text"/>
                     </div>
                 </div>
 
