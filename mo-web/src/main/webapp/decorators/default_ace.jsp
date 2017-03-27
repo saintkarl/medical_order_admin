@@ -46,7 +46,6 @@
         <!--[if IE]>
         <script src="<c:url value="/themes/ace_1.4/jquery/1.11.3/jquery.min.js"/>"></script>
         <![endif]-->
-        <script src="<c:url value='/themes/mo/js/global.js'/>"></script>
     <decorator:head/>
 
 <body class="no-skin">
@@ -79,12 +78,26 @@
 
 <script>
     function warningBeforeDelete(id){
-        bootbox.confirm('<fmt:message key="confirm.delete"/>', '<fmt:message key="confirm.delete.msg"/>', function(r) {
-            if(r){
-                if(id != null && id != undefined){
-                    $("<input type='hidden' name='checkList' value='"+id+"'>").appendTo($("#listForm"));
-                    $("#crudaction").val("delete");
-                    $("#listForm").submit();
+        bootbox.confirm({
+            title: "<fmt:message key="confirm.delete"/>",
+            message: "<fmt:message key="confirm.delete.msg"/>",
+            buttons: {
+                cancel: {
+                    label: '<i class="fa fa-times"></i> Cancel',
+                    className: 'btn-danger'
+                },
+                confirm: {
+                    label: '<i class="fa fa-check"></i> Confirm',
+                    className: 'btn-success'
+                }
+            },
+            callback: function (result) {
+                if(result){
+                    if(id != null && id != undefined){
+                        $("<input type='hidden' name='checkList' value='"+id+"'>").appendTo($("#listForm"));
+                        $("#crudaction").val("delete");
+                        $("#listForm").submit();
+                    }
                 }
             }
         });

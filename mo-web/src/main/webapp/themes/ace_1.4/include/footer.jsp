@@ -48,4 +48,4 @@
 <%--popup detele--%>
 <%--<script src="<c:url value="/themes/plugins/sweetalert/lib/sweet-alert.min.js"/>"></script>--%>
 <script type="text/javascript" src="<c:url value="/themes/plugins/kartik-bootstrap-fileinput/js/fileinput.min.js" />"></script>
-<script type="text/javascript" src="<c:url value="/themes/tat/js/global.js" />"></script>
+<script type="text/javascript" src="<c:url value="/themes/mo/js/global.js" />"></script>

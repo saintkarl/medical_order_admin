@@ -94,7 +94,7 @@
                                        pagesize="${items.maxPageItems}" export="false"
                                        class="table table-fcv-ace table-striped table-bordered table-hover dataTable no-footer" style="margin: 3em 0 1.5em;">
                             <display:column headerClass="select-cell" class="select-cell" sortable="false"
-                                            title="<label class='pos-rel'><input type='checkbox' class='ace'><span class='lbl'></span></label>">
+                                            title="<label class='pos-rel'><input id='checkAllItem' type='checkbox' class='ace'><span class='lbl'></span></label>">
                                 <label class="pos-rel">
                                     <input name="checkList" type="checkbox" class="ace" value="${tableList.storeId}"/>
                                     <span class="lbl"></span>
@@ -167,7 +167,7 @@
                 confirmButtonText: "<fmt:message key="label.delete"/>"
             }, function () {
                 $('#crudaction').val('delete');
-                $("#itemForm").submit();
+//                $("#itemForm").submit();
             });
         });
     });

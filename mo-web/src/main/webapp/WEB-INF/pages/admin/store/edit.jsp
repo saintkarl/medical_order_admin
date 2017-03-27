@@ -109,13 +109,17 @@
 
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right"><fmt:message key="label.status"/></label>
-
                     <div class="col-sm-9 radio">
-                        <form:radiobutton path="pojo.status" value="${Constants.ACTIVE}" cssClass="ace"/><span class="lbl"><fmt:message key="label.active"/></span>
-                        <form:radiobutton path="pojo.status" value="${Constants.INACTIVE}" cssClass="ace"/><span class="lbl"><fmt:message key="label.inactive"/></span>
+                        <label>
+                            <input name="pojo.status" type="radio" class="ace" value="${Constants.ACTIVE}" <c:if test="${item.pojo.status eq Constants.ACTIVE || empty item.pojo.status}">checked</c:if>>
+                            <span class="lbl"><fmt:message key="label.active"/></span>
+                        </label>
+                        <label>
+                            <input name="pojo.status" type="radio" class="ace" value="${Constants.INACTIVE}" <c:if test="${item.pojo.status eq Constants.INACTIVE}">checked</c:if>>
+                            <span class="lbl"><fmt:message key="label.inactive"/></span>
+                        </label>
                         <form:errors path="pojo.status" cssClass="red-text"/>
                     </div>
-
                 </div>
 
                 <form:hidden path="pojo.storeId" />

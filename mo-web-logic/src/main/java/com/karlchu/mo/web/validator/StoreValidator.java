@@ -42,6 +42,6 @@ public class StoreValidator extends ApplicationObjectSupport implements Validato
     }
 
     private void checkRequiredField(StoreCommand command, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pojo.title", "errors.required", new Object[]{this.getMessageSourceAccessor().getMessage("store.title")}, "non-empty value required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "pojo.name", "errors.required", new Object[]{this.getMessageSourceAccessor().getMessage("store.title")}, "non-empty value required.");
     }
 }

@@ -19,6 +19,7 @@ public class StoreEntity {
 
     @Id
     @Column(name = "storeid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getStoreId() {
         return storeId;
     }
